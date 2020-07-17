@@ -21,7 +21,8 @@ const Login = (props) => {
   }
 
     return (
-      <div>
+      <div className="loginContainer">
+        <h1>Welcome to the Bubble App!</h1>
         <form onSubmit={this.login}>
           <input
             type="text"
@@ -35,7 +36,7 @@ const Login = (props) => {
             value={credentials.password}
             onChange={this.handleChange}
           />
-          <button>Log in</button>
+          <button type="submit">Log in</button>
         </form>
       </div>
     )
