@@ -32,6 +32,14 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 3. Describe how web servers work.
 4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
+1. (JWT) Tokens are JSON web tokens used to generate authentication tokens. It's a way to transmit information privately and securely between a client and a server as a JSON object. With axios/API calls using authorization, a tokenn header is used for every request that requires credentials so a client can have access to protected resources.
+
+2. In a web application, in order to ensure data security, you need to ensure client-side authentication is being run properly. Using token headers, protected routes, privately displayed components, and login pages can help accomplish this. 
+
+3. A web server is a computer that stores codes for websites or it can be a program that runs on such a computer. It is connnected to the internet and when we load the code on a server, then you could say the server is "hosting" the website/app. Sometimes the server itself needs code for directions. The software program for that is called a web server, serving web pages and their information to users upon request. It servers information over a web device. 
+
+4. POST/PUT methods are used to add or edit/update (U in CRUD) information when interfacing with APIs and servers. Delete methods represent the D in CRUD for "destroy/delete".
+
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
 ## Instructions
@@ -40,18 +48,18 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 > This section should include instruction for the sprint challenge. These should only cover things that are _not_ being evaluated by the challenge itself, e.g. environment/project setup, link to a starter project, etc. In general, this will be the following Git fork, clone, branch, commit, push, create pull request flow, though may need to be adapted for some specific challenges.
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: git push origin `<firstName-lastName>`
-- [ ] **RUN** npm install at the root to retrieve all the dependencies for the node server. You will not need to create any react apps here nor will you need to install any other dependencies. You should have all you need in this repo.
-- [ ] **LOOK** at all the files you've been given for this project. One important file to note is server.js. This file contains an API that you are going to be interfacing with. Below is documentation on how to interact with the API.
-- [ ] **RUN** npm start to get your API up and running on http://localhost:5000. This is the URL you're going to need to use within your React app in order to make AJAX requests for data.
- - [ ] **LOOK** at your client directory and notice it's just a plain ol' React App that we've built using create-react-app.
+- [x] Create a forked copy of this project
+- [x] Add your team lead as collaborator on Github
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [x] Push commits: git push origin `<firstName-lastName>`
+- [x] **RUN** npm install at the root to retrieve all the dependencies for the node server. You will not need to create any react apps here nor will you need to install any other dependencies. You should have all you need in this repo.
+- [x] **LOOK** at all the files you've been given for this project. One important file to note is server.js. This file contains an API that you are going to be interfacing with. Below is documentation on how to interact with the API.
+- [x] **RUN** npm start to get your API up and running on http://localhost:5000. This is the URL you're going to need to use within your React app in order to make AJAX requests for data.
+ - [x] **LOOK** at your client directory and notice it's just a plain ol' React App that we've built using create-react-app.
  cd into client and run npm install to retrieve the client side dependencies.
- - [ ] **RUN** npm start to fire up your React application.
+ - [x] **RUN** npm start to fire up your React application.
 
 ### Task 2: Project Requirements
 
