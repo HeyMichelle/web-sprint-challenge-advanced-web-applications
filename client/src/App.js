@@ -8,14 +8,16 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Link to="/home">Home Page</Link>
+        <Link to="/protected">Protected Page</Link>
+
         <Route exact path="/" component={Login} />
-        {/* 
-          Build a PrivateRoute component that will 
-          display BubblePage when you're authenticated 
-        */}
+        <Route path="/home" component={Home} />
+        <PrivateRoute path='/protected' component={Protected} />
       </div>
     </Router>
   );
 }
+
 
 export default App;
