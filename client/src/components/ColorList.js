@@ -27,7 +27,7 @@ const ColorList = ({ colors, updateColors }) => {
         updateColors(colors)
         setColorToEdit(response.data)
         setEditing(false)
-        setRefresh(!refresh)
+    
       })
       .catch(err => console.log(err))
   };
@@ -40,7 +40,7 @@ const ColorList = ({ colors, updateColors }) => {
         console.log('addColor post req res', response)
         // setNewColor()
         updateColors([...colors, newColor])
-        setRefresh(!refresh)
+        
       })
       .catch(err => console.log(err))
   }
@@ -50,7 +50,7 @@ const ColorList = ({ colors, updateColors }) => {
       .delete(`http://localhost:5000/api/colors/${color.id}`)
       .then(response => {
         console.log('delete req res', response)
-        setRefresh(!refresh)
+        
       })
       .catch(err => console.log(err))
   };

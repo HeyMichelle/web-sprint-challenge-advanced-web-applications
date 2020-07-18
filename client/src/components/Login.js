@@ -4,53 +4,55 @@ import { axiosWithAuth } from '../axiosWithAuth';
 const Login = (props) => {
  const [credentials, setCredentials] = useState({});
 
-  state = {
-    credentials: {
-      username: 'Lambda School',
-      password: 'i<3Lambd4'
-    },
-    isLoading: false
-  }
+  // state = {
+  //   credentials: {
+  //     username: 'Lambda School',
+  //     password: 'i<3Lambd4'
+  //   },
+  //   isLoading: false
+  // }
 
-  const login = e => {
+  const loginCred = e => {
     e.preventDefault();
     axiosWithAuth().post('http://localhost:5000/api/login', credentials)
       .then(res => {
-        console.log('Login post request response', response)
+        console.log('Login post request response', res)
         localStorage.setItem('token', res.data.token);
         // window.localStorage.setItem('token', res.data.payload)
         // setTimeout(() => {
         //   this.setState({ isLoading: false })
         //   // this.props.history.push('/bubblepage')
         // }, 500)
-        this.props.history.push('/BubblePage');
+        props.history.push('/BubblePage');
       })
       // .catch(err => console.log(err))
   }
 
   const handleChange = e => {
-    setCredentials: {
+    setCredentials({
       ...credentials,
       [e.target.name]: e.target.value,
-    }
+    })
   }
 
 
     return (
       <div className="loginContainer">
         <h1>Welcome to the Bubble App!</h1>
-        <form onSubmit={this.login}>
+        <form onSubmit={loginCred}>
+          <label>Lambda School</label>
           <input
             type="text"
             name="username"
             value={credentials.username}
-            onChange={this.handleChange}
+            onChange={handleChange}
           />
+          <label>{`i<3Lambd4`}</label>
           <input
             type="password"
             name="password"
             value={credentials.password}
-            onChange={this.handleChange}
+            onChange={handleChange}
           />
           <button type="submit">Log in</button>
         </form>
