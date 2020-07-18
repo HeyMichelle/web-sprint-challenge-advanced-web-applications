@@ -1,24 +1,40 @@
 import React, { useState } from 'react';
-import { axiosWithAuth } from '../path/to/module';
+import { axiosWithAuth } from '../axiosWithAuth';
 
 const Login = (props) => {
  const [credentials, setCredentials] = useState({});
 
+  state = {
+    credentials: {
+      username: 'Lambda School',
+      password: 'i<3Lambd4'
+    },
+    isLoading: false
+  }
+
   const login = e => {
     e.preventDefault();
-    axiosWithAuth().post('login/endpoint', credentials)
+    axiosWithAuth().post('http://localhost:5000/api/login', credentials)
       .then(res => {
+        console.log('Login post request response', response)
         localStorage.setItem('token', res.data.token);
-        this.props.history.push('/');
+        // window.localStorage.setItem('token', res.data.payload)
+        // setTimeout(() => {
+        //   this.setState({ isLoading: false })
+        //   // this.props.history.push('/bubblepage')
+        // }, 500)
+        this.props.history.push('/BubblePage');
       })
+      // .catch(err => console.log(err))
   }
 
   const handleChange = e => {
-      setCredentials: {
-        ...credentials,
-        [e.target.name]: e.target.value,
-      }
+    setCredentials: {
+      ...credentials,
+      [e.target.name]: e.target.value,
+    }
   }
+
 
     return (
       <div className="loginContainer">
