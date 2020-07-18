@@ -19,9 +19,8 @@ const ColorList = ({ colors, updateColors }) => {
 
   const saveEdit = e => {
     e.preventDefault();
-
     axiosWithAuth()
-      .put(`http://localhost:5000/api/colors/${(colorToEdit:id)}`, colorToEdit)
+      .put(`http://localhost:5000/api/colors/${colorToEdit.id}`, colorToEdit)
       .then(response => {
         console.log('ColorList axios PUT req res', response)
         updateColors(colors)
@@ -108,29 +107,36 @@ const ColorList = ({ colors, updateColors }) => {
           </div>
         </form>
       )}
-      <div className="spacer" />
-          <div>
+          <div className="addColorForm">
             <form onSubmit={addColor}>
-              <input
-                placeholder='Color Name'
-                onChange={e =>
-                  setNewColor({ ...newColor, color: e.target.value })
-                }
-                value={newColor.color}
-              />
-
-              <input
-                placeholder='Hex Value'
-                onChange={e =>
-                  setNewColor({
-                    ...newColor,
-                    code: { hex: e.target.value }
-                  })
-                }
-                value={newColor.code.hex}
-              />
-
-              <button type='submit'>Add Color</button>
+              <legend>add color</legend>
+              <label>
+                color: 
+                  <input
+                    placeholder='Color Name'
+                    onChange={e =>
+                      setNewColor({ ...newColor, color: e.target.value })
+                    }
+                    value={newColor.color}
+                  />
+              </label>
+              
+              <label>
+                hex: 
+                  <input
+                    placeholder='Hex Value'
+                    onChange={e =>
+                      setNewColor({
+                        ...newColor,
+                        code: { hex: e.target.value }
+                      })
+                    }
+                    value={newColor.code.hex}
+                  />
+              </label>
+              <div className="button-row">
+                  <button onClick={() => addColor()}>add color</button>
+              </div>
             </form>
           </div>
     </div>
