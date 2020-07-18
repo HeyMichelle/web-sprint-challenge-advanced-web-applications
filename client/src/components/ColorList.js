@@ -21,7 +21,7 @@ const ColorList = ({ colors, updateColors }) => {
     e.preventDefault();
 
     axiosWithAuth()
-      .put(`http://localhost:5000/api/colors/${colorToEdit.id}`, colorToEdit)
+      .put(`http://localhost:5000/api/colors/${(colorToEdit:id)}`, colorToEdit)
       .then(response => {
         console.log('ColorList axios PUT req res', response)
         updateColors(colors)

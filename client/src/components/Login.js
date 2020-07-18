@@ -3,7 +3,8 @@ import { axiosWithAuth } from '../axiosWithAuth';
 
 const Login = (props) => {
  const [credentials, setCredentials] = useState({});
-
+//  const [setState] = useState({});
+  
   // state = {
   //   credentials: {
   //     username: 'Lambda School',
@@ -17,15 +18,15 @@ const Login = (props) => {
     axiosWithAuth().post('http://localhost:5000/api/login', credentials)
       .then(res => {
         console.log('Login post request response', res)
-        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('token', res.data.payload);
         // window.localStorage.setItem('token', res.data.payload)
         // setTimeout(() => {
-        //   this.setState({ isLoading: false })
-        //   // this.props.history.push('/bubblepage')
+        //   setState({ isLoading: false })
+        //   props.history.push('/BubblePage') //why don't I use this.props etc here?
         // }, 500)
         props.history.push('/BubblePage');
       })
-      // .catch(err => console.log(err))
+      .catch(err => console.log(err))
   }
 
   const handleChange = e => {
