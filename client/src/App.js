@@ -6,7 +6,8 @@ import BubblePage from "./components/BubblePage";
 
 import "./styles.scss";
 
-
+// private route better with own component since it can be placed in other locations as well
+// component: on the left of the = sign means renaming
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
@@ -36,3 +37,13 @@ function App() {
 
 
 export default App;
+
+// const user = {
+//   name: "",
+//   password: "",
+//   friends: []
+// }
+
+// //destructure with {} on ht elefthand side
+// ... on the left means the rest, on the right means spread operator ...passwordlessUser meaning all the rest in the object would display
+// const {password, ...passwordlessUser} = user
